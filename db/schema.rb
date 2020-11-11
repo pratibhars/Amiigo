@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_134356) do
+ActiveRecord::Schema.define(version: 2020_11_11_064848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2020_11_10_134356) do
     t.string "amibo_type"
     t.float "amibo_price"
     t.string "amibo_game_series"
-    t.string "amibo_series"
     t.string "amibo_condition"
   end
 
