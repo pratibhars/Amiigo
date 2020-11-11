@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_051621) do
+ActiveRecord::Schema.define(version: 2020_11_10_134356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,12 @@ ActiveRecord::Schema.define(version: 2020_11_10_051621) do
   create_table "amiibos", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "amibo_name"
+    t.string "amibo_type"
+    t.float "amibo_price"
+    t.string "amibo_game_series"
+    t.string "amibo_series"
+    t.string "amibo_condition"
   end
 
   create_table "users", force: :cascade do |t|
