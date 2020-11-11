@@ -69,6 +69,6 @@ class AmiibosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def amiibo_params
-      params.fetch(:amiibo, {})
+      params.require(:amiibo).permit(:amibo_name, :amibo_type, :amibo_price, :amibo_game_series, :amibo_condition, :picture)
     end
 end
