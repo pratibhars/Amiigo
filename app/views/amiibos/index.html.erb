@@ -1,25 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Amiibos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @amiibos.each do |amiibo| %>
-      <tr>
-        <td><%= link_to 'Show', amiibo %></td>
-        <td><%= link_to 'Edit', edit_amiibo_path(amiibo) %></td>
-        <td><%= link_to 'Destroy', amiibo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Amiibo', new_amiibo_path %>
+<div>
+  <% @amiibos.each do |amiibo| %>
+    <div>
+      <%= cl_image_tag(amiibo.image.key, crop: :scale, width: 100, cloud_name: 'prats')%>
+    </div>
+    <h2><%= amiibo.amibo_name %></h2>
+    <p>$<%= amiibo.amibo_price %></p>
+    <p><%= amiibo.amibo_condition %></p>
+    
+  <% end %>
+  <%= link_to 'New Amiibo', new_amiibo_path %>
+  <%= link_to 'Back', amiibos_path %>
+</div>

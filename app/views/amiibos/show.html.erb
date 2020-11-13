@@ -1,4 +1,29 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @amiibo.amibo_name %></h1>
+
+<p id="notice">
+
+<div>
+<ul>
+    <li>
+        <%= cl_image_tag(@amiibo.image.key, crop: :scale, width: 100, cloud_name: 'prats')%>
+    </li>
+    <li>
+        Type: <%= @amiibo.amibo_type %>
+    </li>
+    <li>
+        Price: $<%= "%.2f" % @amiibo.amibo_price %>
+    </li>
+    <li>
+        Amiibo Game Series: <%= @amiibo.amibo_game_series %>
+    </li>
+    <li>
+        Condition: <%= @amiibo.amibo_condition %>
+    </li>
+</ul>
+</div>
+
+<%= notice %> </p>
+<hr>
 
 <%= link_to 'Edit', edit_amiibo_path(@amiibo) %> |
 <%= link_to 'Back', amiibos_path %>

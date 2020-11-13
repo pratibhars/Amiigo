@@ -1,18 +1,21 @@
 
 <%= simple_form_for(@amiibo) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :amibo_name, required: true %>
-    <%= f.input :amibo_type, collection: ["Case", "Figure", "Card", "Yarn"] %>
-    <%= f.input :amibo_price, required: true %>
-    <%= f.input :amibo_game_series, collection: ["Super Smash Bros", "Super Mario", "Super Mario Bros - 30th Anniversary", "Legend of Zelda", "Legend of Zelda - 30th Anniversary", "Splatoon", "Animal Crossing", "Yoshi's Woolly World", "Kirby", "Fire Emblem", "Metroid", "Shovel Knight", "Monster Hunter", "Skylanders", "Other"] %>
-    <%= f.input :amibo_condition, collection: ["New", "Used"] %>
-    <%= f.file_field :picture %>
-  </div>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<div class="form-inputs">
+  <%= f.input :amibo_name, required: true %>
+  <%= f.input :amibo_type, collection: ["Case", "Figure", "Card", "Yarn"] %>
+  <%= f.input :amibo_price, required: true %>
+  <%= f.input :amibo_game_series, collection: ["Super Smash Bros", "Super Mario", "Super Mario Bros - 30th Anniversary", "Legend of Zelda", "Legend of Zelda - 30th Anniversary", "Splatoon", "Animal Crossing", "Yoshi's Woolly World", "Kirby", "Fire Emblem", "Metroid", "Shovel Knight", "Monster Hunter", "Skylanders", "Other"] %>
+  <%= f.input :amibo_condition, collection: ["New", "Used"] %>
+  <%= f.rich_text_area :description %>
+  <%= f.file_field :image %>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
 <% end %>
+

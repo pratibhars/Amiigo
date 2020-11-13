@@ -1,5 +1,7 @@
 class Amiibo < ApplicationRecord
     belongs_to :user
+
     # belongs_to: order 
-    has_one_attached :picture 
+    has_one_attached :image
+    has_rich_text :description 
 end
