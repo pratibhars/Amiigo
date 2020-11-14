@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2020_11_14_055816) do
     t.string "country"
     t.string "state"
     t.boolean "admin_role", default: false
-    t.boolean "buyer_role", default: false
+    t.boolean "seller_role", default: false
     t.boolean "customer_role", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

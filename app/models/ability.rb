@@ -8,7 +8,7 @@ class Ability
     can :read, :all #permission for every user, even if not logged in
     
       user ||= User.new # guest user (not logged in)
-      if user.buyer_role? # additional permissions for logged in users
+      if user.seller_role? # additional permissions for logged in users
         can :read, :create, :update, :destroy, Amiibo, user_id: user.id
       end 
       if user.admin_role?
