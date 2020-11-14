@@ -39,8 +39,11 @@ gem 'devise'
 gem 'simple_form'
 gem 'country_select'
 
-#rolify 
-gem "rolify"
+#rails admin
+gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
+
+#Authorisation 
+gem 'cancancan'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

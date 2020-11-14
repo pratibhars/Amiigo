@@ -1,6 +1,5 @@
 class AmiibosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  # before_action :check_roles
   before_action :set_amiibo, only: [:show, :edit, :update, :destroy]
 
 
@@ -70,13 +69,6 @@ class AmiibosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_amiibo
       @amiibo = Amiibo.find(params[:id])
-    end
-
-    def check_roles
-      if !(user_signed_in? && current_user.has_role?(:admin))
-        flash[:alert] = "You are not authorized to access that page"
-        redirect_to root_path
-      end
     end
 
     # Only allow a list of trusted parameters through.
