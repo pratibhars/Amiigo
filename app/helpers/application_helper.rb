@@ -1,6 +1,6 @@
 module ApplicationHelper
     def author_of(resource)
-        user_signed_in? && resource.user_id == curent_user.id
+        user_signed_in? && resource.user_id == current_user.id
     end 
 
     def admin?

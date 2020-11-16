@@ -8,17 +8,11 @@
         <%= cl_image_tag(@amiibo.image.key, crop: :scale, width: 100, cloud_name: 'prats')%>
     </li>
     <li>
-        Type: <%= @amiibo.amibo_type %>
-    </li>
-    <li>
         Price: $<%= "%.2f" % @amiibo.amibo_price %>
     </li>
-    <li>
-        Amiibo Game Series: <%= @amiibo.amibo_game_series %>
-    </li>
-    <li>
-        Condition: <%= @amiibo.amibo_condition %>
-    </li>
+    <% unless author_of(@amiibo)%>
+        <%= button_to 'Buy', checkout_create_path, method: :post, params: {id: @amiibo.id }, remote: true %>
+    <% end %>
 </ul>
 </div>
 

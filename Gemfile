@@ -6,6 +6,8 @@ ruby '2.7.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
+gem "dotenv", "~> 2.7"
+
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -45,6 +47,9 @@ gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
 #Authorisation 
 gem 'cancancan'
 
+#payment
+gem 'stripe'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -76,3 +81,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "cloudinary", "~> 1.18"
 
 gem "activestorage-cloudinary-service", "~> 0.2.3"
+
+
+gem "dotenv-rails", "~> 2.7"
