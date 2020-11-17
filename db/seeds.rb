@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user_admin = [
+user_admin = 
     {
         username: "super_admin",
         password: "password123",
@@ -21,8 +21,8 @@ user_admin = [
         country: "Australia",
         admin_role: true
     }
-]
-user_seller = [
+
+user_seller = 
 {
     username: "seller",
     password: "password123",
@@ -37,8 +37,8 @@ user_seller = [
     country: "Australia",
     seller_role: true
 }
-]
-user_customer = [
+
+user_customer = 
 
     {
         username: "customer",
@@ -54,7 +54,7 @@ user_customer = [
         country: "Australia",
         customer_role: true 
     }
-]
+
 
 User.destroy_all
 
@@ -62,7 +62,7 @@ admin = User.create!(user_admin)
 seller = User.create!(user_seller)
 customer = User.create!(user_customer)
 
-amiibo_details1 = [
+amiibo_details1 = 
     {
         amibo_name: "Princess Peach",
         amibo_type: "Figure",
@@ -73,9 +73,9 @@ amiibo_details1 = [
         user_id: seller.id 
 
     }
-]
 
-amiibo_details2 = [
+
+amiibo_details2 = 
     {
         amibo_name: "Mario",
         amibo_type: "Figure",
@@ -86,9 +86,9 @@ amiibo_details2 = [
         user_id: seller.id 
 
     }
-]
 
-amiibo_details3 = [
+
+amiibo_details3 = 
     {
         amibo_name: "Kirby",
         amibo_type: "Figure",
@@ -99,7 +99,7 @@ amiibo_details3 = [
         user_id: seller.id
 
     }
-]
+
 
 Amiibo.destroy_all
 

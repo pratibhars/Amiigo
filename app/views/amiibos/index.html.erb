@@ -5,7 +5,7 @@
     </div>
     <h2><%= link_to amiibo[:amibo_name], amiibo_path(amiibo[:id])%></h2>
     <p>$<%= "%.2f" % amiibo.amibo_price %></p>
-    <p><%= amiibo.amibo_condition %></p>
+    <p><%= amiibo.description %></p>
     
   <% end %>
   <%= link_to 'New Amiibo', new_amiibo_path %>
