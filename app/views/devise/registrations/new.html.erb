@@ -41,6 +41,12 @@
     <%= f.input :country,
                 required: true,
                 autofocus: true %>
+    <%= f.input :customer_role, as: :radio_buttons,
+                required: true,
+                autofocus: true %>
+    <%= f.input :seller_role, as: :radio_buttons,
+                required: true,
+                autofocus: true %>
   </div>
 
   <div class="form-actions">

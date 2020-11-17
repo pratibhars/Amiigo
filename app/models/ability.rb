@@ -6,20 +6,23 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     can :read, :all #permission for every user, even if not logged in
+
+      user ||= User.new
     
-      user ||= User.new # guest user (not logged in)
       if user.seller_role? # additional permissions for logged in users
-        can :read, :create, :update, :destroy, Amiibo, user_id: user.id
-      end 
+        can :manage, Amiibo, user_id: user.id
+        can :manage, User, user_id: user.id
+      end
+
       if user.admin_role?
         can :manage, :all
-        can :access, :rails_admin
-        can :manage, :dashboard 
       end
+
       if user.customer_role?
-        can :read, Amiibo
-        can :crud, User, user_id: user.id
+        can :access, Amiibo
+        can :manage, User, user_id: user.id
       end 
+
   end 
 
     #
