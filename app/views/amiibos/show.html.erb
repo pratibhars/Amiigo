@@ -11,7 +11,7 @@
         Price: $<%= "%.2f" % @amiibo.amibo_price %>
     </li>
     <% unless author_of(@amiibo)%>
-        <%= button_to 'Buy', checkout_create_path, method: :post, params: {id: @amiibo.id }, remote: true %>
+            <%= button_to 'Buy', checkout_create_path, method: :post, params: {id: @amiibo.id }, remote: true %>
     <% end %>
 </ul>
 </div>

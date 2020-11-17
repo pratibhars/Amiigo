@@ -1,13 +1,11 @@
-<div>
+<div class="container-fluid">
   <% @amiibos.each do |amiibo| %>
     <div>
       <%= cl_image_tag(amiibo.image.key, crop: :scale, width: 100, cloud_name: 'prats')%>
     </div>
-    <h2><%= link_to amiibo[:amibo_name], amiibo_path(amiibo[:id])%></h2>
+    <h4><%= link_to amiibo[:amibo_name], amiibo_path(amiibo[:id])%></h4>
     <p>$<%= "%.2f" % amiibo.amibo_price %></p>
     <p><%= amiibo.description %></p>
     
   <% end %>
-  <%= link_to 'New Amiibo', new_amiibo_path %>
-  <%= link_to 'Back', amiibos_path %>
 </div>

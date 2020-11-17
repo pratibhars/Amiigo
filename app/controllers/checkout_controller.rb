@@ -28,8 +28,7 @@ class CheckoutController < ApplicationController
 
     end 
 
-    def success
-        
+    def success   
     end 
 
     def cancel
