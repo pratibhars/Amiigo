@@ -18,6 +18,7 @@
 
 <%= notice %> </p>
 <hr>
-
-<%= link_to 'Edit', edit_amiibo_path(@amiibo) %> |
+<% if author_of(@amiibo)%>
+<%= link_to 'Edit', edit_amiibo_path(@amiibo) %>
+<% end %> |
 <%= link_to 'Back', amiibos_path %>
