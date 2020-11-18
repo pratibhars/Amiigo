@@ -6,6 +6,7 @@
     <h4><%= link_to amiibo[:amibo_name], amiibo_path(amiibo[:id])%></h4>
     <p>$<%= "%.2f" % amiibo.amibo_price %></p>
     <p><%= amiibo.description %></p>
-    
+    <button><%= link_to "View", amiibo_path(amiibo[:id]) %></button>
   <% end %>
+    <%= will_paginate @amiibos %>
 </div>

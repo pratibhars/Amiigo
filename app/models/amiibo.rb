@@ -6,4 +6,6 @@ class Amiibo < ApplicationRecord
 
     has_one_attached :image, dependent: :purge
     has_rich_text :description
+
+    self.per_page = 2
 end

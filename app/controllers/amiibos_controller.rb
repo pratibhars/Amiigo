@@ -7,7 +7,7 @@ class AmiibosController < ApplicationController
   # GET /amiibos
   # GET /amiibos.json
   def index
-    @amiibos = Amiibo.all
+    @amiibos = Amiibo.paginate(page: params[:page])
   end
 
   # GET /amiibos/1
@@ -65,6 +65,8 @@ class AmiibosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
