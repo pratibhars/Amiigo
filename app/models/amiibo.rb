@@ -1,6 +1,6 @@
 class Amiibo < ApplicationRecord
     belongs_to :user
-    validates :amibo_name, :amibo_price, :description, presence: true
+    validates :amibo_name, :amibo_price, :description, :amibo_type, :amibo_game_series, :amibo_condition, :image, presence: true
     validates :amibo_price, numericality: {greater_than_or_equal_to: 0}
     attribute :amibo_price, default: 0.5
 
