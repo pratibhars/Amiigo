@@ -2,22 +2,13 @@
 
 <p id="notice">
 
-<div>
-<ul>
-    <li>
-        <%= cl_image_tag(@amiibo.image.key, crop: :scale, width: 100, cloud_name: 'prats')%>
-    </li>
-    <li>
-        Price: $<%= "%.2f" % @amiibo.amibo_price %>
-    </li>
-    <% unless author_of(@amiibo)%>
-            <%= button_to 'Buy', checkout_create_path, method: :post, params: {id: @amiibo.id }, remote: true %>
-    <% end %>
-</ul>
-</div>
+<% unless author_of(@amiibo)%>
+    <%= button_to 'Buy', checkout_create_path, method: :post, params: {id: @amiibo.id }, remote: true %>
+<% end %>
+
 <%= notice %> </p>
 <hr>
-    <% if author_of(@amiibo)%>
-        <%= link_to 'Edit', edit_amiibo_path(@amiibo) %>
-    <% end %> |
+<% if author_of(@amiibo)%>
+    <%= link_to 'Edit', edit_amiibo_path(@amiibo) %>
+<% end %> |
 <%= link_to 'Back', amiibos_path %>
