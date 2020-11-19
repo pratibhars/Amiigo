@@ -1,0 +1,11 @@
+<% @amiibos.each do |amiibo| %>
+    <div class="col-sm">
+      <%= cl_image_tag(amiibo.image.key, crop: :scale, width: 100, cloud_name: 'prats')%>
+      <h4><%= amiibo.amibo_name%></h4>
+      <p>$<%= "%.2f" % amiibo.amibo_price %></p>
+      <p><%= amiibo.amibo_type %></p>
+      <p><%= amiibo.description %></p>
+      <p><%= amiibo.amibo_game_series %></p>
+      <button type="button" class="btn btn-secondary"> <%= link_to "View", amiibo_path(amiibo[:id]) %> </button>
+    </div>
+<% end %>
