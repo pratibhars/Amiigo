@@ -9,6 +9,8 @@
 <%= notice %> </p>
 <hr>
 <% if author_of(@amiibo)%>
+    <%= link_to 'New Amiibo', new_amiibo_path %>
     <%= link_to 'Edit', edit_amiibo_path(@amiibo) %>
+    <%= link_to "Delete!", amiibo_path(@amiibo), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %> |
 <%= link_to 'Back', amiibos_path %>
